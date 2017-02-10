@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [First Chapter](chapter1.md)
+* [pdb调试](pdb.md)
 
 ## Test笔试题
 
