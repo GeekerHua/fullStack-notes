@@ -24,7 +24,7 @@ $ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 - 登录mysql
 ```zsh
-$ mysql -unroot -p
+$ mysql -uroot -p
 ```
 - 修改权限
 ```zsh
