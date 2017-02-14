@@ -13,7 +13,7 @@
 - 修改表: alter table `Tname` add|change|drop `列`;
 
 
-## 数据命令crud:
+## 数据命令操作crud:
 - 查询: select * from `Tname`;
 - 增加: insert into `Tname` values(……);
 - 修改: update `Tname` set `key`=`value`;
@@ -31,10 +31,10 @@
 - 消除关键字
     - select distinct `field` from `Tname`;
 - where指定运算
-    > 对行进项筛选,逐行判断
+    > 对行进筛选,逐行判断
 - 比较运算
     - `>, <, !=, =, >=, <=`
-    - select * from `Tname` where id<=4;
+    - `select * from `Tname` where id<=4`;
 - 逻辑运算
     - and, or ,not
 
