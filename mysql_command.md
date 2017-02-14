@@ -14,7 +14,7 @@
 查看所有表 | show tables;
 创建表 | create table `Tname` (id int auto_increment primary key not null, `…………`);
 删除表 | drop talbe `Tname`;
-修改表 | alter table `Tname` `add\|change\|drop` `列`;
+修改表 | alter table `Tname` add\|change\|drop `列`;
 
 
 ## 数据命令操作crud:
@@ -52,6 +52,16 @@
 `_`	|  	匹配一个任意字符
 
 
+- 范围查询
+> in 表示在一个非连续的范围内
+> between…and…在一个连续的范围内(between紧挨着的and是它的匹配语句)
+```bash
+> select * from `Tname` where id in(1,3,8); 
+> select * from `Tname` where id between 2 and 8;
+```
+
+- 空判断
+> null与’’是不同的。is null来判断是否为空
 
 
 

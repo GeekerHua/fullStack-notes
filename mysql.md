@@ -44,8 +44,8 @@ $ mysql -u root -p
 
 - 修改权限
 ```bash
-$ grant all privileges on *.* to 'root'@'%' identified by '数据库密码' with grant option;   # 其中'mysql'为数据库访问密码
-$ flush privileges;
+> grant all privileges on *.* to 'root'@'%' identified by '数据库密码' with grant option;   # 其中'mysql'为数据库访问密码
+> flush privileges;
 ```
 
 - 重启mysql
@@ -58,3 +58,7 @@ $ mysql.server restart
 ```
 
 #### 修改数据库密码
+mac下登陆成功后
+```bash
+> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpass');
+```
