@@ -72,3 +72,25 @@ mac下开启安全模式?????啥是安全模式
 ```bash
 $ mysqld_s?afe --skip-grant-tables
 ```
+
+## 备份及恢复
+### 备份
+Ubuntu下
+```bash
+$ cd /var/lib/mysql 
+$ sudo -s
+# mysqldump -u root -p DBname > bak.sql
+```
+
+### 还原
+#### 方法一
+```bash
+$ cd /var/lib/mysql    #(进入到MySQL库目录，根据自己的MySQL的安装情况调整目录) 
+# mysql -u root -p DBname < bak.sql，
+```
+
+#### 方法二
+- $ mysql -u root -p回车，输入密码，进入MySQL的控制台"mysql>"
+- 建立你要还原的数据库，输入"create database DBname；"
+- 切换到刚建立的数据库，输入"use DBname；"
+- 导入数据，输入"source bak.sql；"
