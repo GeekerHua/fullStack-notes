@@ -57,3 +57,4 @@ $ sudo service mysql restart
 $ mysql.server restart
 ```
 
+#### 修改数据库密码

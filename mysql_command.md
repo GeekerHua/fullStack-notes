@@ -37,6 +37,15 @@
     - `select * from `Tname` where id<=4`;
 - 逻辑运算
     - and, or ,not
+- 模糊查询(like)
+> select * from `Tname` where `field` like `%黄_`;
+> 
+匹配符 | 匹配内容
+--| --
+`% `    |	匹配0到多个任意字符
+`_`	|  	匹配一个任意字符
+
+
 
 
 
