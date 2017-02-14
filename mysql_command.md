@@ -79,12 +79,12 @@
 
 ## 分组
 > 分组后，只能查询出相同的数据列,非聚合字段，不能出现在结果集中。
-select `field,`field2` from `Tname` group by `field`,`field2`;
+select `field`,`field2` from `Tname` group by `field`,`field2`;
 - 查询女生人数
-  - select gender as 性别, count(*) from students group by gender;
+  - select `gender` as `性别`, count(*) from `Tname` group by `gender`;
 
 ### 分组后筛选
 > having,对分组后的结果集进行筛选。
-- select gender as `性别`, count(*) as `rs` from students group by gender having `rs`>2;
+- select `gender` as `性别`, count(*) as `rs` from `Tname` group by `gender` having `rs`>2;
 
 
