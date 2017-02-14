@@ -74,8 +74,17 @@
 | count(*) | 计算总行数 | select count(*) from `Tname` where isDelete=0; 
 | max(`field`) | 求此列最大值 | select max(id) from `Tname` where gender=0; |
 | min(`field`) | 求此列最小值 | select min(id) from `Tname` where isDelete=0; |
-| sum(`field`) | 对数值列求和 | select sum(age) from `Tname` where age&lt;30; |
+| sum(`field`) | 对数值列求和 | select sum(age) from `Tname` where age>30; |
 | avg(`field`) | 对数值列求平均值 | select avg(age) from `Tname`; |
 
+## 分组
+> 分组后，只能查询出相同的数据列,非聚合字段，不能出现在结果集中。
+select `field,`field2` from `Tname` group by `field`,`field2`;
+- 查询女生人数
+  - select gender as 性别, count(*) from students group by gender;
+
+### 分组后筛选
+> having,对分组后的结果集进行筛选。
+- select gender as `性别`, count(*) as `rs` from students group by gender having `rs`>2;
 
 
