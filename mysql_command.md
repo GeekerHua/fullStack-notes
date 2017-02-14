@@ -95,3 +95,14 @@ select `field`,`field2` from `Tname` group by `field`,`field2`;
 > select * from `Tname` where isDelete=0 order by `field` asc|desc (, `field` asc|desc);
 ```
 
+## 分页
+- start: 从第几条数据开始，从0算
+- count: 取几条
+```bash
+> select * from `Tname` limit `start`, `count`;
+```
+
+- 每页显示m条数据，当前是第n页
+	- start = (n-1)*m
+
+
