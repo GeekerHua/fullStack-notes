@@ -1,4 +1,4 @@
-# 数据库命令
+## 数据库命令
 - 查看所有数据库: show databases;
 - 查看当前使用的数据库: select database();
 - 切换数据库: use `BDname`;
@@ -6,14 +6,14 @@
 - 删除数据库: drop database `DBname`;
 
 
-# 数据表命令
+## 数据表命令
 - 查看所有表: show tables;
 - 创建表: create table `Tname` (id int auto_increment primary key not null, `…………`);
 - 删除表: drop talbe `Tname`;
 - 修改表: alter table `Tname` add|change|drop `列`;
 
 
-# 数据命令crud:
+## 数据命令crud:
 - 查询: select * from `Tname`;
 - 增加: insert into `Tname` values(……);
 - 修改: update `Tname` set `key`=`value`;
@@ -22,6 +22,21 @@
     - alter table `Tname` add isDelete bit default 0;
     - update `Tname` isDelete=1 where `……`;
     
+
+## 查询语句
+- 最基本的
+    - select * from `Tname` (as `别名`);
+- 指定字段
+    - select (`field`,`field`) from `Tname`;
+- 消除关键字
+    - select distinct `field` from `Tname`;
+- where指定运算
+    > 对行进项筛选,逐行判断
+- 比较运算
+    - `>, <, !=, =, >=, <=`
+    - select * from `Tname` where id<=4;
+- 逻辑运算
+    - and, or ,not
 
 
 
