@@ -29,6 +29,9 @@ from scores
 
 ### 示例
 ```bash
-> select students.name,avg(scores.score) from scores  inner join students on students.id=scores.stuid inner join subjects on subjects.id=scores.subid group by students.id;
+> select students.name,avg(scores.score) from scores  
+    inner join students on students.id=scores.stuid 
+    inner join subjects on subjects.id=scores.subid 
+    group by students.id;
 ```
 

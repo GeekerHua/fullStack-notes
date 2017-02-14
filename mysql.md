@@ -58,5 +58,17 @@ $ mysql.server restart
 ```
 
 #### 修改数据库密码
-mac下登陆成功后
-- SET PASSWORD FOR `root`@`localhost` = PASSWORD('newpass');
+mysql登陆成功后
+```bash
+> SET PASSWORD FOR `root`@`localhost` = PASSWORD('newpass');
+```
+
+或终端下
+```bash
+$ mysqladmin -u root -p password 密码  
+```
+
+mac下开启安全模式?????啥是安全模式
+```bash
+$ mysqld_s?afe --skip-grant-tables
+```
