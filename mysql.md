@@ -22,7 +22,6 @@ $ sudo service mysql restart  # 重启
 $ mysql.server start    # 启动
 $ mysql.server stop        # 停止
 $ mysql.server restart    # 重启
-
 ```
 
 ### 设置
