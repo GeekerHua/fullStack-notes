@@ -98,6 +98,7 @@ select `field`,`field2` from `Tname` group by `field`,`field2`;
 ## 分页
 - start: 从第几条数据开始，从0算
 - count: 取几条
+
 ```bash
 > select * from `Tname` limit `start`, `count`;
 ```
