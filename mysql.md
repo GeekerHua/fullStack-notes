@@ -59,6 +59,4 @@ $ mysql.server restart
 
 #### 修改数据库密码
 mac下登陆成功后
-```bash
-> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpass');
-```
+- SET PASSWORD FOR `root`@`localhost` = PASSWORD('newpass');
