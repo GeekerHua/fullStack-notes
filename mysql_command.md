@@ -87,4 +87,11 @@ select `field`,`field2` from `Tname` group by `field`,`field2`;
 > having,对分组后的结果集进行筛选。
 - select `gender` as `性别`, count(*) as `rs` from `Tname` group by `gender` having `rs`>2;
 
+## 排序
+- asc: 升序
+- desc: 降序
+
+```bash
+> select * from `Tname` where isDelete=0 order by `field` asc|desc (, `field` asc|desc);
+```
 
