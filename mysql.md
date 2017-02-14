@@ -14,14 +14,14 @@ $ brew install mysql
 ### 管理服务
 ```bash
 # ubuntu
-$ sudo service mysql start    # 启动
-$ sudo service mysql stop    # 停止
-$ sudo service mysql restart  # 重启
+$ sudo service mysql start        # 启动
+$ sudo service mysql stop         # 停止
+$ sudo service mysql restart      # 重启
 
 # mac
-$ mysql.server start    # 启动
-$ mysql.server stop        # 停止
-$ mysql.server restart    # 重启
+$ mysql.server start        # 启动
+$ mysql.server stop         # 停止
+$ mysql.server restart      # 重启
 ```
 
 ### 设置
