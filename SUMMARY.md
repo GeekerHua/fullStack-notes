@@ -4,6 +4,7 @@
 * [First Chapter](chapter1.md)
 * [pdb调试](pdb.md)
 * [mysql安装与配置](mysql.md)
+* [mysql\_command](mysql_command.md)
 
 ## Test笔试题
 
