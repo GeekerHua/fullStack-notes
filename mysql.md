@@ -3,10 +3,10 @@
 
 - 安装
 ```bash
-# ubuntu
+# ubuntu下
 $ sudo apt-get install mysql-server mysql-client
-
-# mac
+--
+# mac下
 $ brew install mysql
 # 然后按照提示输入
 ```
@@ -17,7 +17,7 @@ $ brew install mysql
 $ sudo service mysql start        # 启动
 $ sudo service mysql stop         # 停止
 $ sudo service mysql restart      # 重启
-
+--
 # mac
 $ mysql.server start        # 启动
 $ mysql.server stop         # 停止
@@ -44,12 +44,16 @@ $ mysql -u root -p
 
 - 修改权限
 ```bash
-$ grant all privileges on *.* to 'root'@'%' identified by 'mysql' with grant option;   # 其中'mysql'为数据库访问密码
+$ grant all privileges on *.* to 'root'@'%' identified by '数据库密码' with grant option;   # 其中'mysql'为数据库访问密码
 $ flush privileges;
 ```
 
 - 重启mysql
 ```bash
-$ sudo service mysql stop
+# ubuntu下
+$ sudo service mysql restart
+--
+# mac下
+$ mysql.server restart
 ```
 
