@@ -7,6 +7,8 @@
 - foreign key(`field`) references `Tname`(`primary key`);
 
 ### 外键的级联操作
+> 当表中数据被删除了，这个表被其他表外键关联的时候。
+
 - restrict(限制): 默认值，抛异常
 - cascade(级联): 如果主表记录删掉，则从表中相关联的记录都将被删除
 - set null:将外键设置为空
