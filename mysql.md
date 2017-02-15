@@ -25,12 +25,24 @@ $ mysql.server restart      # 重启
 ```
 
 ### 设置
-ubuntu下
+
+#### mac下配置
+[参考链接](https://segmentfault.com/q/1010000000475470)
+> 配置文件位置 `/usr/local/opt/mysql/bin/mysql_secure_installation` //mysql 提供的配置向导
+
+会出现以下几个问题
+- Would you like to setup VALIDATE PASSWORD plugin?(是否使用认证的密码，这里系统会对密码强度进行限制)
+- Please set the password for root here.(设置root密码)
+- Do you wish to continue with the password provided?(是否确定使用刚才提供的密码)
+- Remove anonymous users?(是否移除匿名用户)
+- Disallow root login remotely?(是否禁止远程登录)
+- Remove test database and access to it?(是否删除测试数据库)
+- Reload privilege tables now?(是否重新载入权限表)
+
+#### ubuntu下
 设置文件位置在`/etc/mysql/mysql.conf.d/mysqld.cnf`
 
-mac下
-
-#### 设置允许远程连接
+##### 设置允许远程连接
 - 修改配置文件
 ```bash
 $ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
@@ -57,7 +69,7 @@ $ sudo service mysql restart
 $ mysql.server restart
 ```
 
-#### 修改数据库密码
+### 修改数据库密码
 mysql登陆成功后
 ```bash
 > SET PASSWORD FOR `root`@`localhost` = PASSWORD('newpass');
