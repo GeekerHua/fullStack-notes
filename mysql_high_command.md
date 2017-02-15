@@ -4,8 +4,9 @@
 - 多对多： 存在一张新表中
 
 ## 外键
+> 外键用来对表的数据进行约束。拥有外键的表添加数据，外键值必须是外键所关联的表中存在的数据，否则添加失败。
 - foreign key(`field`) references `Tname`(`primary key`);
-
+  
 ### 外键的级联操作
 > 当表中数据被删除了，这个表被其他表外键关联的时候。
 
@@ -56,7 +57,20 @@ order by ...
 limit star,count
 ```
 
-## 自关联查询
+## 自关联
+> 一张物理表，包含多张逻辑表，该表的外键关联该表的主键。通常用来解决一张表存储的数据很少，而又有多张结构相似的表，常用在省份、城市地区的数据表中。
+
+```bash
+> create table areas(
+    aid int primary key,
+    atitle varchar(20),
+    pid int,
+    foreign key(pid) references areas(id)
+    );
+```
+
+> 自关联查询
+
 ```bash
 > select city.* from areas as city
     inner join areas as province on city.pid=province.aid
@@ -94,3 +108,49 @@ create view `Vname` as `sql语句`
 - begin: 开始，之后的操作是内存级的，并对数据进行锁定。
 - commit: 提交，将begin后的操作应用到物理数据库，并解除锁定。
 - rollback: 回滚，begin之后的操作取消，并解除锁定。
+
+## 索引
+### 选择列的数据类型(提高搜索效率)
+- 越小的数据类型通常更好：越小的数据类型通常在磁盘、内存和CPU缓存中都需要更少的空间，处理起来更快
+- 简单的数据类型更好：整型数据比起字符，处理开销更小，因为字符串的比较更复杂
+- 尽量避免NULL：应该指定列为NOT NULL，除非你想存储NULL。在MySQL中，含有空值的列很难进行查询优化，因为它们使得索引、索引的统计信息以及比较运算更加复杂。你应该用0、一个特殊的值或者一个空串代替空值
+
+### 索引操作
+> 索引分单列索引和组合索引
+>> 单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引
+>> 组合索引，即一个索包含多个列
+
+- 查看索引：
+```bash
+> SHOW INDEX FROM table_name;
+```
+
+- 创建索引：
+```bash
+> CREATE INDEX indexName ON mytable(username(length));
+```
+
+- 查看索引：
+```bash
+> show index from `Tname`;
+```
+
+- 删除索引：
+```bash
+> DROP INDEX [indexName] ON mytable;
+```
+
+- 开启运行时间监测：
+```bash
+> set profiling=1;
+```
+
+- 执行查询语句：
+```bash
+> select * from areas where atitle='北京市';
+```
+
+- 查看执行的时间：
+```bash
+> show profiles;
+```
