@@ -106,6 +106,11 @@ $ cd /var/lib/mysql
 $ sudo -s
 # mysqldump -u root -p DBname > bak.sql
 ```
+mac 下
+```bash
+$ mysqldump -p DBname > bak.sql
+```
+> 如果备份提示没有权限，使用`sudo`
 
 ### 还原
 #### 方法一
