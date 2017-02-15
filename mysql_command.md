@@ -3,22 +3,25 @@
 ### E-R模型
 
 > 当前物理的数据库都是按照E-R模型进行设计的
-- E表示entry，实体
-- R表示relationship，关系
-> > 一个实体转换为数据库中的一个表
-> >关系描述两个实体之间的对应规则，包括
-  - 一对一
-  - 一对多
-  - 多对多
+>
+> * E表示entry，实体
+> * R表示relationship，关系
+>   > 一个实体转换为数据库中的一个表  
+>   > 关系描述两个实体之间的对应规则，包括
+>   >
+>   > * 一对一
+>   > * 一对多
+>   > * 多对多
 
-关系转换为数据库表中的一个列 
-- 在关系型数据库中一行就是一个对象
+关系转换为数据库表中的一个列
 
+* 在关系型数据库中一行就是一个对象
 
 ### 三范式
-- 第一范式（1NF)：列不可拆分
-- 第二范式（2NF)：唯一标识
-- 第三范式（3NF)：引用主键
+
+* 第一范式（1NF\)：列不可拆分
+* 第二范式（2NF\)：唯一标识
+* 第三范式（3NF\)：引用主键
 
 ## 数据库命令
 
@@ -41,11 +44,10 @@
 
 ### alter的change与modify命令
 
-- change: 修改字段名
-- modify: 不修改字段名，修改属性
-> alter table students change name sname varchar(10) not null;
-> alter table students modify name carchar(10) not null;
-
+* change: 修改字段名
+* modify: 不修改字段名，修改属性
+  > alter table students change name sname varchar\(10\) not null;  
+  > alter table students modify name carchar\(10\) not null;
 
 ## 数据命令操作crud:
 
@@ -120,7 +122,7 @@
 
 > having,对分组后的结果集进行筛选。
 >
-> * select `gender` as `性别`, count\(\*\) as `rs` from `Tname` group by `gender` having `rs`\>2;
+> * select `gender` as `性别`, count\(\*\) as `rs` from `Tname` group by `gender` having `rs`&gt;2;
 
 ## 排序
 
@@ -142,4 +144,6 @@
 
 * 每页显示m条数据，当前是第n页
   * start = \(n-1\)\*m
+
+
 

@@ -1,4 +1,4 @@
-  ## 实体关系
+## 实体关系
 - 1对1：存在那个表都行
 - 1对多：存在多的那个表
 - 多对多： 存在一张新表中
@@ -73,3 +73,5 @@ create view `Vname` as `sql语句`
     select students.*,scores.score from scores
     inner join students on scores.stuid=students.id;
 ```
+
+## 事务
