@@ -1,4 +1,5 @@
-## ubuntu下
+# 安装
+
 > mysql默认端口为3306，默认情况只允许本地访问，需要设置才能远程访问。
 
 - 安装
@@ -9,6 +10,12 @@ $ sudo apt-get install mysql-server mysql-client
 # mac下
 $ brew install mysql
 # 然后按照提示输入
+--
+# pip2中
+$ pip install MySQL-python
+--
+# pip3中 (python3中不再对`MySQL-python`进行支持)
+$ pip3 install PyMySQL
 ```
 
 ### 管理服务
