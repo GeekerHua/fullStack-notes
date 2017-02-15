@@ -39,6 +39,14 @@
 | 删除表 | drop talbe `Tname`; |
 | 修改表 | alter table `Tname` \(add,change,drop\) `列`; |
 
+### alter的change与modify命令
+
+- change: 修改字段名
+- modify: 不修改字段名，修改属性
+> alter table students change name sname varchar(10) not null;
+> alter table students modify name carchar(10) not null;
+
+
 ## 数据命令操作crud:
 
 | 功能 | 命令 |
