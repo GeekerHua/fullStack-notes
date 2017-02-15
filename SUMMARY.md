@@ -5,6 +5,7 @@
 * [mysql安装与配置](mysql.md)
 * [mysql\_command](mysql_command.md)
 * [mysql\_high\_command](mysql_high_command.md)
+* [mysql\_functions](mysql_functions.md)
 
 ## Test笔试题
 
