@@ -39,6 +39,12 @@ $ mysql.server restart      # 重启
 - Remove test database and access to it?(是否删除测试数据库)
 - Reload privilege tables now?(是否重新载入权限表)
 
+> 设置 MySQL 用户以及数据存放地址(未验证)[参考链接](http://blog.csdn.net/wdsdsdsds/article/details/51983453)
+```bash
+$ unset TMPDIR
+$ mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+```
+ 
 #### ubuntu下
 设置文件位置在`/etc/mysql/mysql.conf.d/mysqld.cnf`
 

@@ -35,3 +35,41 @@ from scores
     group by students.id;
 ```
 
+## 完整的select语句
+```bash
+select distinct *
+from 表名
+where ....
+group by ... having ...
+order by ...
+limit star,count
+```
+
+## 执行顺序为：
+```bash
+from 表名
+where ....
+group by ...
+select distinct *
+having ...
+order by ...
+limit star,count
+```
+
+## 自关联查询
+```bash
+> select city.* from areas as city
+    inner join areas as province on city.pid=province.aid
+    where province.atitle='山西省';
+```
+
+## 视图
+> 类似于使用变量对sql语句的封装，视图的功能就是用来查询。视图的结果集用来查询。格式为
+create view `Vname` as `sql语句`
+使用 select * from `Vname`
+
+```
+> create view v_stu_sub_sco as
+    select students.*,scores.score from scores
+    inner join students on scores.stuid=students.id;
+```
