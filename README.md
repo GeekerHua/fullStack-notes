@@ -1,3 +1,3 @@
-# My Awesome Book
+# Python笔记
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+这是我学习Python及相关内容的笔记，记录我的成长，如有错误，欢迎指正。[在线阅读](https://geekerhua.gitbooks.io/python_learn_note/content/)
