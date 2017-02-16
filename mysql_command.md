@@ -29,7 +29,7 @@
 | --- | --- |
 | 查看所有数据库 | show databases; |
 | 查看当前使用的数据库 | select database\(\); |
-| 切换数据库 | use `BDname`; |
+| 切换数据库 | use `DBname`; |
 | 创建数据库 | create database `DBname` charset=utf8; |
 | 删除数据库 | drop database `DBname`; |
 
