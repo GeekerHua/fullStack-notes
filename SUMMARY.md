@@ -6,6 +6,7 @@
 * [mysql\_command](mysql_command.md)
 * [mysql\_high\_command](mysql_high_command.md)
 * [mysql\_functions](mysql_functions.md)
+* [mysql\_Python](mysql_python.md)
 
 ## Test笔试题
 
