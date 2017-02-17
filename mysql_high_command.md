@@ -16,6 +16,16 @@
 - no action:什么都不做
 > 推荐使用逻辑删除
 
+### 外键的添加及删除(在没有外键的两个表中，重新添加外键。)
+- 单独添加外键
+    - alter table `Tname` add constraint `外键名` foreign key(`field`) references `Tname`(`field`);
+- 单独删除外键
+    > 可以用show create `Tname`; 查看外键名
+
+    - alter table `Tname` drop foreign key `外键名`;
+
+> 当需要插入大量有外键数据时，先删除外键，再插入数据，最后添加外键。
+
 ## 连接查询
 
 > select students.name, subjects.name,scores.score
