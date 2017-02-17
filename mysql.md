@@ -121,6 +121,6 @@ $ cd /var/lib/mysql    #(进入到MySQL库目录，根据自己的MySQL的安装
 
 #### 方法二
 - $ mysql -u root -p回车，输入密码，进入MySQL的控制台"mysql>"
-- 建立你要还原的数据库，输入"create database DBname；"
-- 切换到刚建立的数据库，输入"use DBname；"
-- 导入数据，输入"source bak.sql；"
+- 建立你要还原的数据库，输入"create database `DBname`；"
+- 切换到刚建立的数据库，输入"use `DBname`；"
+- 导入数据，输入"source `bak.sql`；"
