@@ -10,6 +10,7 @@
 * [mysql\_functions](mysql_functions.md)
 * [mysql\_Python](mysql_python.md)
 * [mongoDB基础](mongodb.md)
+* [mongoDB\_height\_command](mongodb_height_command.md)
 
 ## Test笔试题
 
