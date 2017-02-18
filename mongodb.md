@@ -133,14 +133,11 @@ sb.stu.update\(`query`, `update`,{multi:`boolean`}\)
 ### 保存
 
 > 如果有\_id则修改数据，没有\_id则添加文档
-
 * db.`Tname`.save\(`document`\)
 
 ### 删除
 
-语法： db.`Tname`.remove\(`query`, {justOne: `boolean`}\)
-\`\`\`
-
+>语法： db.`Tname`.remove\(`query`, {justOne: `boolean`}\)
 * db.`Tname`.remove\({}, {justOne: `boolean`}\)
 
 ### 查询
@@ -193,4 +190,13 @@ sb.stu.update\(`query`, `update`,{multi:`boolean`}\)
 > * 例：查询年龄大于30的学生
 > * db.stu.find\({$where:function\(\){return this.age&gt;20}}\)
 
+#### 结果集的函数
+函数 | 说明 | 示例
+---- | ---- | ----
+limit(`num`) | 限制查询结果数量，`num`为数量 | db.stu.find().limit(2)
+skip(`num`)  | 跳过指定数量的文档 |　db.stu.find().skip(2)
+sort({`fiels`: `1/-1`}) | 排序参数1为升序，-1为降序 |  db.stu.find().sort({gender:-1,age:1})
+count(`conditions`)    | 统计个数，可以没有条件 | db.stu.count({age:{$gt:20},gender:1})
+find({}, {`field`: `boolean`}) | 投影，字段为1显示，字段为0不显示　｜　db.stu.find({},{_id:0,name:1,gender:1})
+distinct(`field`, `conditions`) | 对数据进行去重。 | db.stu.distinct({},{name:1,gender:1})
 
