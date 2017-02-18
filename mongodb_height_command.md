@@ -7,10 +7,10 @@
 ------ | -----
 $group | 将集合中的文档分组，可用于统计结果
 $match | 过滤数据，只输出符合符合条件的文档
-$project | 修改输入文档的结构，如重命名、增加、删除字段、创建计算结果
-$sort    | 将输入文档排序后输出
+$project | 投影,字段为1显示，字段为0不显示,修改输入文档的结构，如重命名、增加、删除字段、创建计算结果
+$sort    | 将输入文档排序后输出，1升序，-1降序
 $limit    |限制聚合管道返回的文档数
-$skip    |跳过制定数量的文档，并返回余下的文档
+$skip    | 跳过制定数量的文档，并返回余下的文档
 $unwind  | 将数组类型的字段进行拆分
 
 ## 常用表达式
@@ -27,3 +27,59 @@ $first    | 根据资源文档的排序获取第一个文档数据
 $last    | 根据资源文档的排序获取最后一个文档数据
 
 ## $group
+```
+db.stu.aggregate([
+    {$group:
+        {
+            _id:'$genter',
+            counter: {$sum:1},
+            avg: {$avg: '$age'},
+            list: {$push: '$$ROOT'}
+        }
+    }
+])
+```
+
+## $match
+```
+db.stu.aggregate([
+    {$match:{age:{$gt:20}}},
+    {$group:{_id:'$gender',counter:{$sum:1}}}
+])
+```
+
+## project
+```
+db.stu.aggregate([
+    {$group:{_id:'$gender',counter:{$sum:1}}},
+    {$project:{_id:0,counter:1}}
+])
+```
+
+# sort
+```
+db.stu.aggregate([
+    {$group:{_id:'$gender',counter:{$sum:1}}},
+    {$sort:{counter:-1}}
+])
+```
+
+# limit、skip
+```
+db.stu.aggregate([
+    {$group:{_id:'$gender',counter:{$sum:1}}},
+    {$sort:{counter:1}},
+    {$skip:1},
+    {$limit:1}
+])
+```
+
+# unwind
+> 将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值
+- db.集合名称.aggregate([{$unwind:'$字段名称'}])
+- db.t3.aggregate([{$unwind:{path:'$sizes',preserveNullAndEmptyArrays:true}}])
+
+> preserveNullAndEmptyArrays: `boolean`  #防止数据丢失,如果是false，对于空数组、无字段、null的文档，会被丢弃。
+
+
+
