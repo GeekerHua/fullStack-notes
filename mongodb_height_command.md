@@ -77,7 +77,7 @@ db.stu.aggregate([
 # unwind
 > 将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值
 - db.集合名称.aggregate([{$unwind:'$字段名称'}])
-- db.t3.aggregate([{$unwind:{path:'$sizes',preserveNullAndEmptyArrays:true}}])
+- db.t3.aggregate([{$unwind:{path:'$sizes', preserveNullAndEmptyArrays:true}}])
 
 > preserveNullAndEmptyArrays: `boolean`  #防止数据丢失,如果是false，对于空数组、无字段、null的文档，会被丢弃。
 
