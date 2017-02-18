@@ -3,8 +3,8 @@
 #　NoSQL
 Not Only SQL。即非关系型数据库，不维护数据库。
 
-# MongoDB
-MongoDB基于分布式 文件存储的NoSQL数据库
+# [MongoDB](https://www.mongodb.com/)
+MongoDB基于**分布式 文件存储**的NoSQL数据库，由C++编写，运行稳定，性能高。
 
 ## 安装Mongodb
 ### Ubuntu下
