@@ -6,6 +6,7 @@ connection对象默认开启了事务，执行完sql语句后需要执行commit�
 ### 方法
 方法名 | 作用 
 ----  | ----
+connect()  | 创建connection方法
 close() | 关闭connection对象
 commit() | 提交事务
 rollback() |　事务回滚操作
