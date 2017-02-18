@@ -10,9 +10,11 @@ MongoDB基于分布式 文件存储的NoSQL数据库
 ### Ubuntu下
 
 ### Mac下
-brew install mongodb
-sudo mkdir -p /data/db
-sudo chown hua /data/db
+```bash
+$ brew install mongodb
+$ sudo mkdir -p /data/db
+$ sudo chown hua /data/db
+```
 
 ### 安装robomongo
 > robomongo是一个mongodb的可视化工具，具有多个平台的版本。
