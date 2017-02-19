@@ -68,7 +68,7 @@ $ mysql -u root -p
 ```
 
 - 修改权限
-```bash
+```sql
 > grant all privileges on *.* to 'root'@'%' identified by '数据库密码' with grant option;   # 其中'mysql'为数据库访问密码
 > flush privileges;
 ```
@@ -84,8 +84,8 @@ $ mysql.server restart
 
 ### 修改数据库密码
 mysql登陆成功后
-```bash
-> SET PASSWORD FOR `root`@`localhost` = PASSWORD('newpass');
+```sql
+SET PASSWORD FOR `root`@`localhost` = PASSWORD('newpass');
 ```
 
 或终端下

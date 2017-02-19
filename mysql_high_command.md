@@ -27,7 +27,15 @@
 > 当需要插入大量有外键数据时，先删除外键，再插入数据，最后添加外键。
 
 ## 连接查询
+### 使用WHERE
+```sql
+SELECT id,name,people_num
+FROM employee,department
+WHERE employee.in_dpt = department.dpt_name
+ORDER BY id;
+```
 
+### 使用JOIN ON
 > select students.name, subjects.name,scores.score
 from scores
 > - inner **join** students **on** scores.stuid=students.id
@@ -38,12 +46,12 @@ from scores
 - A left join B	(左连接)	: 左边为准
 - A right join B (右连接)	: 右表为准
 
-### 示例
+#### 示例
 ```sql
-> select students.name,avg(scores.score) from scores  
-    inner join students on students.id=scores.stuid 
-    inner join subjects on subjects.id=scores.subid 
-    group by students.id;
+select students.name,avg(scores.score) from scores  
+inner join students on students.id=scores.stuid 
+inner join subjects on subjects.id=scores.subid 
+group by students.id;
 ```
 
 ## 完整的select语句
@@ -71,20 +79,20 @@ limit star,count
 > 一张物理表，包含多张逻辑表，该表的外键关联该表的主键。通常用来解决一张表存储的数据很少，而又有多张结构相似的表，常用在省份、城市地区的数据表中。
 
 ```sql
-> create table areas(
-    aid int primary key,
-    atitle varchar(20),
-    pid int,
-    foreign key(pid) references areas(id)
-    );
+create table areas(
+aid int primary key,
+atitle varchar(20),
+pid int,
+foreign key(pid) references areas(id)
+);
 ```
 
 > 自关联查询
 
 ```sql
-> select city.* from areas as city
-    inner join areas as province on city.pid=province.aid
-    where province.atitle='山西省';
+select city.* from areas as city
+inner join areas as province on city.pid=province.aid
+where province.atitle='山西省';
 ```
 
 ## 视图
@@ -93,9 +101,9 @@ create view `Vname` as `sql语句`
 使用 select * from `Vname`
 
 ```sql
-> create view v_stu_sub_sco as
-    select students.*,scores.score from scores
-    inner join students on scores.stuid=students.id;
+create view v_stu_sub_sco as
+select students.*,scores.score from scores
+inner join students on scores.stuid=students.id;
 ```
 
 ## 事务
@@ -112,7 +120,7 @@ create view `Vname` as `sql语句`
 
 修改表的类型
 ```sql
-> alter table 'Tname' engine=innodb;
+alter table 'Tname' engine=innodb;
 ```
 
 - begin: 开始，之后的操作是内存级的，并对数据进行锁定。
@@ -132,35 +140,35 @@ create view `Vname` as `sql语句`
 
 - 查看索引：
 ```sql
-> SHOW INDEX FROM table_name;
+SHOW INDEX FROM table_name;
 ```
 
 - 创建索引：
 ```sql
-> CREATE INDEX indexName ON mytable(username(length));
+CREATE INDEX indexName ON mytable(username(length));
 ```
 
 - 查看索引：
 ```sql
-> show index from `Tname`;
+show index from `Tname`;
 ```
 
 - 删除索引：
 ```sql
-> DROP INDEX [indexName] ON mytable;
+DROP INDEX [indexName] ON mytable;
 ```
 
 - 开启运行时间监测：
 ```sql
-> set profiling=1;
+set profiling=1;
 ```
 
 - 执行查询语句：
 ```sql
-> select * from areas where atitle='北京市';
+select * from areas where atitle='北京市';
 ```
 
 - 查看执行的时间：
 ```sql
-> show profiles;
+show profiles;
 ```

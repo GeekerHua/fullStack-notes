@@ -90,9 +90,9 @@
   > in 表示在一个非连续的范围内  
   > between…and…在一个连续的范围内\(between紧挨着的and是它的匹配语句\)
   >
-  > ```bash
-  > > select * from `Tname` where id in(1,3,8); 
-  > > select * from `Tname` where id between 2 and 8;
+  > ```sql
+  > select * from `Tname` where id in(1,3,8); 
+  > select * from `Tname` where id between 2 and 8;
   > ```
 
 * 空判断
@@ -131,7 +131,7 @@
 * desc: 降序
 
 ```sql
-> select * from `Tname` where isDelete=0 order by `field` asc|desc (, `field` asc|desc);
+select * from `Tname` where isDelete=0 order by `field` asc|desc (, `field` asc|desc);
 ```
 
 ## 分页
@@ -140,7 +140,7 @@
 * count: 取几条
 
 ```sql
-> select * from `Tname` limit `start`, `count`;
+select * from `Tname` limit `start`, `count`;
 ```
 
 * 每页显示m条数据，当前是第n页

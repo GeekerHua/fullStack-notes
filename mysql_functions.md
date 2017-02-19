@@ -38,14 +38,14 @@ hour(time)|返回time的小时数(范围是0到23)
 minute(time)|返回time的分钟数(范围是0到59)
 second(time)|返回time的秒数(范围是0到59)
 
-```bash
-> select year('2016-12-21');
+```sql
+select year('2016-12-21');
 ```
 ### 日期计算
 > 使用+-运算符，数字后面的关键字为year、month、day、hour、minute、second
 
-```bash
-> select '2016-12-21'+interval 1 day;
+```sql
+select '2016-12-21'+interval 1 day;
 ```
 ### 日期格式化
 > date_format(date,format)
@@ -61,8 +61,8 @@ second(time)|返回time的秒数(范围是0到59)
 获取分%i|值为0-59的整数
 获取秒%s|值为0-59的整数
 
-```bash
-> select date_format('2016-12-21','%Y %m %d');
+```sql
+select date_format('2016-12-21','%Y %m %d');
 ```
 函数 | 用法
 --- | ---
@@ -88,7 +88,7 @@ second(time)|返回time的秒数(范围是0到59)
 - 无符号整数unsigned
 
 ```sql
-> SELECT CONVERT('125.83',SIGNED);
-> SELECT CAST('125.83' AS signed);
+SELECT CONVERT('125.83',SIGNED);
+SELECT CAST('125.83' AS signed);
 ```
 
