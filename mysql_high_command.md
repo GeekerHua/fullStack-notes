@@ -39,7 +39,7 @@ from scores
 - A right join B (右连接)	: 右表为准
 
 ### 示例
-```bash
+```sql
 > select students.name,avg(scores.score) from scores  
     inner join students on students.id=scores.stuid 
     inner join subjects on subjects.id=scores.subid 
@@ -47,7 +47,7 @@ from scores
 ```
 
 ## 完整的select语句
-```bash
+```sql
 select distinct *
 from 表名
 where ....
@@ -57,7 +57,7 @@ limit star,count
 ```
 
 ## 执行顺序为：
-```bash
+```sql
 from 表名
 where ....
 group by ...
@@ -70,7 +70,7 @@ limit star,count
 ## 自关联
 > 一张物理表，包含多张逻辑表，该表的外键关联该表的主键。通常用来解决一张表存储的数据很少，而又有多张结构相似的表，常用在省份、城市地区的数据表中。
 
-```bash
+```sql
 > create table areas(
     aid int primary key,
     atitle varchar(20),
@@ -81,7 +81,7 @@ limit star,count
 
 > 自关联查询
 
-```bash
+```sql
 > select city.* from areas as city
     inner join areas as province on city.pid=province.aid
     where province.atitle='山西省';
@@ -92,7 +92,7 @@ limit star,count
 create view `Vname` as `sql语句`
 使用 select * from `Vname`
 
-```
+```sql
 > create view v_stu_sub_sco as
     select students.*,scores.score from scores
     inner join students on scores.stuid=students.id;
@@ -111,7 +111,7 @@ create view `Vname` as `sql语句`
 修改、删除、插入，对数据进行修改的时候。
 
 修改表的类型
-```bash
+```sql
 > alter table 'Tname' engine=innodb;
 ```
 
@@ -131,36 +131,36 @@ create view `Vname` as `sql语句`
 >> 组合索引，即一个索包含多个列
 
 - 查看索引：
-```bash
+```sql
 > SHOW INDEX FROM table_name;
 ```
 
 - 创建索引：
-```bash
+```sql
 > CREATE INDEX indexName ON mytable(username(length));
 ```
 
 - 查看索引：
-```bash
+```sql
 > show index from `Tname`;
 ```
 
 - 删除索引：
-```bash
+```sql
 > DROP INDEX [indexName] ON mytable;
 ```
 
 - 开启运行时间监测：
-```bash
+```sql
 > set profiling=1;
 ```
 
 - 执行查询语句：
-```bash
+```sql
 > select * from areas where atitle='北京市';
 ```
 
 - 查看执行的时间：
-```bash
+```sql
 > show profiles;
 ```

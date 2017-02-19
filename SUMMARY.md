@@ -6,11 +6,11 @@
 * [pdb调试](pdb.md)
 * [mysql安装与配置](mysql.md)
 * [mysql基础](mysql_command.md)
+* [mysql数据类型](mysql-data-type.md)
 * [mysql高级](mysql_high_command.md)
 * [mysql函数](mysql_functions.md)
-* [mysql\_Python](mysql_python.md)
+* [mysql与Python](mysql_python.md)
 * [mongoDB基础](mongodb.md)
-* [mongoDB高级](mongodb_height_command.md)
 
 ## Test笔试题
 

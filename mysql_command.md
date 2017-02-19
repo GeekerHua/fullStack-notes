@@ -1,4 +1,5 @@
 ## 数据库
+了解SQL和MySQL
 
 ### E-R模型
 
@@ -129,7 +130,7 @@
 * asc: 升序
 * desc: 降序
 
-```bash
+```sql
 > select * from `Tname` where isDelete=0 order by `field` asc|desc (, `field` asc|desc);
 ```
 
@@ -138,7 +139,7 @@
 * start: 从第几条数据开始，从0算
 * count: 取几条
 
-```bash
+```sql
 > select * from `Tname` limit `start`, `count`;
 ```
 

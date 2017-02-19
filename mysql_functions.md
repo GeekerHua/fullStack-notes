@@ -87,7 +87,7 @@ second(time)|返回time的秒数(范围是0到59)
 - 整数signed
 - 无符号整数unsigned
 
-```bash
+```sql
 > SELECT CONVERT('125.83',SIGNED);
 > SELECT CAST('125.83' AS signed);
 ```
