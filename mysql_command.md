@@ -32,7 +32,7 @@
 | 查看当前使用的数据库 | select database\(\); |
 | 切换数据库 | use `DBname`; |
 | 创建数据库 | create database `DBname` charset=utf8; |
-| 删除数据库 | drop database `DBname`; |
+| 删除数据库 | DROP DATABASE `DBname`; |
 
 ## 数据表命令
 
@@ -41,10 +41,20 @@
 | 查看所有表 | show tables; |
 | 创建表 | create table `Tname` \(id int auto\_increment primary key not null, `…………`\); |
 | 删除表 | drop talbe `Tname`; |
-| 修改表 | alter table `Tname` \(add,change,drop\) `列`; |
+| 修改表名 | RENAME TABLE `原名` TO `新名字`; |
+| 修改表名 | ALTER TABLE `原名` RENAME `新名字`; |
+| 修改表名 | ALTER TABLE `原名` RENAME TO `新名字`; |
 
-### alter的change与modify命令
+### 对一列进行修改(修改表结构)
+| 功能 | 命令 | 
+--- | ---
+增加一列 | ALTER TABLE `表名字` ADD COLUMN `列名字` `数据类型` `约束`;或： ALTER TABLE `表名字` ADD `列名字` `数据类型` `约束`;
+删除一列 | ALTER TABLE `表名字` ADD COLUMN `列名字` `数据类型` `约束` 或： ALTER TABLE `表名字` ADD `列名字` `数据类型` `约束`;
+修改数据类型 | ALTER TABLE `表名字` MODIFY `列名字` `新数据类型`;
+重命名一列 | ALTER TABLE `表名字` CHANGE `原列名` `新列名` `数据类型` `约束`;
 
+#### alter的change与modify命令
+** 修改数据类型可能会导致数据丢失，请谨慎考虑**
 * change: 修改字段名
 * modify: 不修改字段名，修改属性
   > alter table students change name sname varchar\(10\) not null;  

@@ -26,6 +26,15 @@
 
 > 当需要插入大量有外键数据时，先删除外键，再插入数据，最后添加外键。
 
+## 子查询
+> 有时必须处理多个表才能获得所需的信息。例如：想要知道名为 "Tom" 的员工所在部门做了几个工程。员工信息储存在 employee 表中，但工程信息储存在project 表中。
+
+```sql
+SELECT of_dpt,COUNT(proj_name) AS count_project FROM project
+WHERE of_dpt IN
+(SELECT in_dpt FROM employee WHERE name='Tom');
+```
+
 ## 连接查询
 ### 使用WHERE
 ```sql
