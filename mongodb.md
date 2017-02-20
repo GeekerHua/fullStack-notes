@@ -148,15 +148,45 @@ sb.stu.update\(`query`, `update`,{multi:`boolean`}\)
 * findOne\(`query`\) \# 查询一条文档
 * pretty\(\) \# 查询结果结构化显示
 
+#### 条件操作符
+语法： `$type`
+
+type类型 | type值
+--- | ---
+双精度型|1
+字符串|2
+对象|3
+数组|4
+二进制数据|5
+对象ID|7
+布尔类型|8
+数据|9
+空|10
+正则表达式|11
+JS代码|13
+符号|14
+有作用域的JS代码|15
+32位整型数|16
+时间戳|17
+64位整型数|18
+Min key|255
+Max key|127
+
+范例，查找name是字符串的文档记录
+```sql
+db.shiyanlou.find({"name":{$type:2}})
+```
+
+
 #### 比较运算符
 
 | 运算符 | 全称 | 功能 |
 | --- | --- | --- |
 | : | : | 默认是等于，没有运算符 |
-| $lt | less than | 小于或等于 |
-| $lte | less than equal | 小于或等于 |
-| $gt | greater than | 大于 |
-| $gte | greater than equal | 大于或等于 |
+| $lt | low than | 小于或等于 |
+| $lte | low than equal | 小于或等于 |
+| $gt | greate than | 大于 |
+| $gte | greate than equal | 大于或等于 |
 | $ne | not equal | 不等于 |
 
 #### 逻辑运算符
@@ -166,7 +196,10 @@ sb.stu.update\(`query`, `update`,{multi:`boolean`}\)
 | - | 逻辑与 | db.stu.find\({age:{$gte:18},gender:1}\) |
 | $or | 逻辑或 | db.stu.find\({$or:\[{age:{$gt:18}},{gender:1}\]}\) |
 
-> 同时使用： db.stu.find\({$or:\[{age:{$gte:18}},{gender:1}\],name:'gj'}\)
+> 同时使用：
+```sql
+db.stu.find({$or:[{age:{$gte:18}},{gender:1}],name:'gj'})
+```
 
 #### 范围运算符
 

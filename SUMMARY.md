@@ -11,6 +11,7 @@
 * [mysql函数](mysql_functions.md)
 * [mysql与Python](mysql_python.md)
 * [mongoDB基础](mongodb.md)
+* [mongoDB高级命令](mongodb_height_command.md)
 
 ## Test笔试题
 
