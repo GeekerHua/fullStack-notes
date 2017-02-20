@@ -97,30 +97,40 @@ mac下开启安全模式?????啥是安全模式
 ```bash
 $ mysqld_s?afe --skip-grant-tables
 ```
+## 导出
+是把数据库某个表中的数据保存到一个文件之中。导出语句基本格式为：
+```sql
+SELECT 列1，列2 INTO OUTFILE '文件路径和文件名' FROM 表名字;
+```
+> 可能会出现以下错误：
+ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
+
+## 导入
+导入操作，可以把一个文件里的数据保存进一张表。导入语句格式为：
+```sql
+LOAD DATA INFILE '文件路径' INTO TABLE 表名字;
+```
 
 ## 备份及恢复
 ### 备份
-Ubuntu下
+
 ```bash
-$ cd /var/lib/mysql 
-$ sudo -s
-# mysqldump -u root -p DBname > bak.sql
+$ mysqldump -u root -p DBname 表名 > bak.sql
 ```
-mac 下
-```bash
-$ mysqldump -p DBname > bak.sql
-```
+
 > 如果备份提示没有权限，使用`sudo`
 
 ### 还原
 #### 方法一
-```bash
-$ cd /var/lib/mysql    #(进入到MySQL库目录，根据自己的MySQL的安装情况调整目录) 
-# mysql -u root -p DBname < bak.sql，
+```sql
+> source `bak.sql`；
 ```
 
 #### 方法二
 - $ mysql -u root -p回车，输入密码，进入MySQL的控制台"mysql>"
 - 建立你要还原的数据库，输入"create database `DBname`；"
 - 切换到刚建立的数据库，输入"use `DBname`；"
-- 导入数据，输入"source `bak.sql`；"
+```bash
+> mysql -u root -p DBname < bak.sql，
+```
+
