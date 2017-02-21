@@ -8,13 +8,15 @@
 ## 数据库
 
 * [mysql安装与配置](DataBase/mysql.md)
-* [mysql基础](DataBase/mysql_command.md)
+* [mysql基础](DataBase/mysql-command.md)
 * [mysql数据类型](DataBase/mysql-data-type.md)
-* [mysql高级](DataBase/mysql_high_command.md)
-* [mysql函数](DataBase/mysql_functions.md)
-* [mysql与Python](DataBase/mysql_python.md)
-* [mongoDB基础](DataBase/mongodb.md)
-* [mongoDB高级命令](DataBase/mongodb_height_command.md)
+* [mysql高级](DataBase/mysql-high-command.md)
+* [mysql函数](DataBase/mysql-functions.md)
+* [mysql与Python](DataBase/mysql-python.md)
+* [mongoDB安装与配置](DataBase/mongodb.md)
+* [mongoDB基础](DataBase/mongodb-command.md)
+* [mongoDB高级命令](DataBase/mongodb-high-command.md)
+* [mongoDB与Python](DataBase/mongodb-python.md)
 * [Redis基础](DataBase/redis.md)
 
 ## Test笔试题
@@ -30,5 +32,5 @@
 * [20170112](test/20170112.md)
 * [20170117](test/20170117.md)
 * [20170120](test/20170120.md)
-* [test1\_foundation](test/test1_foundation.md)
+* [test1](test/test1-foundation.md)
 
