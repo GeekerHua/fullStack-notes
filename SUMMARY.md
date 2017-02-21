@@ -12,6 +12,7 @@
 * [mysql与Python](mysql_python.md)
 * [mongoDB基础](mongodb.md)
 * [mongoDB高级命令](mongodb_height_command.md)
+* [Redis基础](redis.md)
 
 ## Test笔试题
 

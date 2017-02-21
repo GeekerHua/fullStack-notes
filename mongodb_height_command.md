@@ -29,7 +29,7 @@ $first    | 根据资源文档的排序获取第一个文档数据
 $last    | 根据资源文档的排序获取最后一个文档数据
 
 ## $group
-```
+```sql
 db.stu.aggregate([
     {$group:
         {
@@ -43,7 +43,7 @@ db.stu.aggregate([
 ```
 
 ## $match
-```
+```sql
 db.stu.aggregate([
     {$match:{age:{$gt:20}}},
     {$group:{_id:'$gender',counter:{$sum:1}}}
@@ -51,7 +51,7 @@ db.stu.aggregate([
 ```
 
 ## $project
-```
+```sql
 db.stu.aggregate([
     {$group:{_id:'$gender',counter:{$sum:1}}},
     {$project:{_id:0,counter:1}}
@@ -59,7 +59,7 @@ db.stu.aggregate([
 ```
 
 ## $sort
-```
+```sql
 db.stu.aggregate([
     {$group:{_id:'$gender',counter:{$sum:1}}},
     {$sort:{counter:-1}}
@@ -67,7 +67,7 @@ db.stu.aggregate([
 ```
 
 ## $limit、skip
-```
+```sql
 db.stu.aggregate([
     {$group:{_id:'$gender',counter:{$sum:1}}},
     {$sort:{counter:1}},
