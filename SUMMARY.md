@@ -17,7 +17,9 @@
 * [mongoDB基础](DataBase/mongodb-command.md)
 * [mongoDB高级命令](DataBase/mongodb-high-command.md)
 * [mongoDB与Python](DataBase/mongodb-python.md)
-* [Redis基础](DataBase/redis.md)
+* [Redis安装及配置](DataBase/redis.md)
+* [Redis基础](DataBase/redis-command.md)
+* [Redis高级应用](DataBase/redis-high-apply.md)
 
 ## Test笔试题
 
