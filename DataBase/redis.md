@@ -69,10 +69,10 @@ $ redis-cli
 
  功能 | 命令 | 示例 | 结果
  ---- | ---- | --- |---
- 设置 | 
+ 设置 |
  设置单个属性 | HSET key field value | HSET sam python 99 | (integer) 1
  设置多个属性 | HMSET key field value [field value ...] | HMSET alice python 99 php 88 | OK
- 获取 | 
+ 获取 |
  获取一个属性的值 | HGET key field | HGET sam python | "99"
  获取多个属性的值 | HMGET key field [field ...] | HMGET alice python php | 1) "99", 2) "88"
  获取所有属性和值 | HGETALL key | HGETALL alice | 1) "python", 2) "99", 3) "php", 4) "88"
@@ -90,21 +90,21 @@ $ redis-cli
 - 按照插入顺序排序
 - 在列表的头部或者尾部添加元素
 
-功能 | 命令
----- | ----
+功能 | 命令 | 示例 | 结果
+---- | ---- | --- | ---
 设置 |
-左侧插入数据 | LPUSH key value [value ...]
-右侧插入数据 | RPUSH key value [value ...]
-在指定位置前后插入数据 | LINSERT key BEFORE\|AFTER pivot value
-设置索引所在元素的值 | LSET key index value
+左侧插入数据 | LPUSH key value [value ...] | LPUSH date two one | (integer) 2
+右侧插入数据 | RPUSH key value [value ...] | RPUSH date nine ten | (integer) 4
+在指定位置前后插入数据 | LINSERT key BEFORE\|AFTER pivot value |  LINSERT num AFTER two three | (integer) 5
+设置索引所在元素的值 | LSET key index value | LSET num 3 eight | OK
 获取 |
-从左侧弹出key对应list的首个元素并返回 | LPOP key
-从右侧弹出key对应list的首个元素并返回 | RPOP key
-返回列表制定范围内的元素 | LRANGE key start stop
+从左侧弹出key对应list的首个元素并返回 | LPOP key | LPOP num | "one"
+从右侧弹出key对应list的首个元素并返回 | RPOP key | RPOP num | "ten"
+返回列表制定范围内的元素 | LRANGE key start stop | LRANGE num 0 5 | 1) "two", 2) "three", 3) "eight"
 其它 | 
-裁剪列表，改为原集合的一个子集 | LTRIIM key start stop
-返回list长度 | LLEN key
-返回list索引位置的元素 | LINDEX key index
+裁剪列表，改为原集合的一个子集 | LTRIM key start stop | LTRIM num 1 2 | OK (1) "three", 2) "eight")
+返回list长度 | LLEN key | LLEN num | (integer) 2
+返回list索引位置的元素 | LINDEX key index | LINDEX num 1 | "eight"
 
 ## set
 > 
@@ -112,18 +112,18 @@ $ redis-cli
 - 元素为string类型
 - 元素具有唯一性，不重复
 
-功能 | 命令 
---- | ---
+功能 | 命令 | 示例 | 结果
+--- | --- | --- | ---
 设置 | 
-添加元素 | SADD key member [member ...]
+添加元素 | SADD key member [member ...] | SADD a 1 2 3 4 | (integer) 4
 获取 |
-返回集合所有的元素 | SMEMBERS key
-返回集合元素个数 | SCARD key
+返回集合所有的元素 | SMEMBERS key | SMEMBERS a | 1) "1", 2) "2", 3) "3", 4) "4"
+返回集合元素个数 | SCARD key | SCARD a | (integer) 4
 其它 |
-交集 | SINTER key [key ...]
-差集 | SDIFF key [key ...]
-合集 | SUNION key [key ...]
-判断元素是否在集合中 | SISMEMBER key member
+交集 | SINTER key [key ...] | SINTER a b | 1) "1", 2) "3"
+差集(a-b,以a为准) | SDIFF key [key ...] | SDIFF a b | 1) "2", 2) "4"
+合集 | SUNION key [key ...] | SUNION a b | 1) "a", 2) "c", 3) "3", 4) "1", 5) "2", 6) "4"
+判断元素是否在集合中 | SISMEMBER key member | SISMEMBER a 3 | (integer) 1
 
 ## zset
 > 
