@@ -35,34 +35,34 @@ $ redis-cli
 ## string
 > string是最基本的类型，几乎什么都能存，最大能存储512MB的数据，string是类型安全的。
 
-命令 | 示例
----| ---
+功能 | 命令 | 示例 | 结果
+---| --- | --- | ---
 设置 |
-设置键值 | SET key value
-设置键值及过期时间 | SETEX key seconds value
-设置多个键值 | MSET key value [key value ...]
+设置键值 | SET key value | SET name hua | OK
+设置键值及过期时间 | SETEX key seconds value | SETEX age 5 26 | OK
+设置多个键值 | MSET key value [key value ...] |  MSET gender boy height 166 | OK
 获取 |
-根据键获取值 | GET key
-根据多个键获取多个值 | MGET key [key ...]
+根据键获取值 | GET key | GET name | "hua"
+根据多个键获取多个值 | MGET key [key ...] | MGET gender height| 1) "boy"  2) "166"
 运算(仅对数值) | 
-对value+1操作 | INCR key
-对value+整数 | INCRBY key increment
-对value-1操作 | DECR key
-对value-整数 | DECRBY key decrement
+对value+1操作 | INCR key | INCR age | (integer) 1
+对value+整数 | INCRBY key increment | INCRBY age 16 | (integer) 17
+对value-1操作 | DECR key | DECR age | (integer) 16
+对value-整数 | DECRBY key decrement | DECRBY age 3 | (integer) 13
 其它 | 
-追加值 | APPEND key value
-获取值长度 | STRLEN key
+追加值 | APPEND key value | APPEND age 22 | (integer) 4 ,get age ="1322"
+获取值长度 | STRLEN key | STRLEN name | (integer) 4
 
 ## 键操作
 
-功能 | 命令
---- | ----
-查找键(支持正则) | KEYS pattern
-判断键是否存在(有1无0) | EXISTS key [key ...]
-查看value类型 | TYPE key
-删除键及对应值 | DEL key [key ...]
-设置过期时间 | EXPIRE key seconds
-查看有效时间(s) | TTL key
+功能 | 命令 | 示例 | 结果
+--- | ---- | --- | ---
+查找键(支持正则) | KEYS pattern | KEYS * | 1) "name",2) "age"，。。。。
+判断键是否存在(有1无0) | EXISTS key [key ...] | EXISTS weight height | (integer) 1
+查看value类型 | TYPE key | TYPE age | string
+删除键及对应值 | DEL key [key ...] | DEL height | (integer) 1
+设置过期时间 | EXPIRE key seconds | EXPIRE gender 5 | "boy",(nil)
+查看有效时间(s) | TTL key | TTL name | (integer) -1
 
 ## hash
 > hash用于存储对象，对象的格式为键值对
