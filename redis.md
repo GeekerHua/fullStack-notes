@@ -67,22 +67,22 @@ $ redis-cli
 ## hash
 > hash用于存储对象，对象的格式为键值对
 
- 功能 | 命令
- ---- | ----
+ 功能 | 命令 | 示例 | 结果
+ ---- | ---- | --- |---
  设置 | 
- 设置单个属性 | HSET key field value
- 设置多个属性 | MHSET key field value [field value ...]
+ 设置单个属性 | HSET key field value | HSET sam python 99 | (integer) 1
+ 设置多个属性 | HMSET key field value [field value ...] | HMSET alice python 99 php 88 | OK
  获取 | 
- 获取一个属性的值 | HGET key field
- 获取多个属性的值 | HMGET key field [field ...]
- 获取所有属性和值 | HGETALL key
- 获取所有的属性 | HKEYS key
- 返回包含属性的个数 | HLEN key
- 获取所有值 | HVALS key
+ 获取一个属性的值 | HGET key field | HGET sam python | "99"
+ 获取多个属性的值 | HMGET key field [field ...] | HMGET alice python php | 1) "99", 2) "88"
+ 获取所有属性和值 | HGETALL key | HGETALL alice | 1) "python", 2) "99", 3) "php", 4) "88"
+ 获取所有的属性 | HKEYS key | HKEYS alice | 1) "python", 2) "php"
+ 返回包含属性的个数 | HLEN key | HLEN alice | (integer) 2
+ 获取所有值 | HVALS key | HVALS alice | 1) "99", 2) "88"
  其它 |
- 判断值是否存在 | HEXISTS key field
- 删除属性及值 | HDEL key field [field ...]
- 返回值的字符串长度 | HSTRLEN key field
+ 判断值是否存在 | HEXISTS key field | HEXISTS sam php | (integer) 0
+ 删除属性及值 | HDEL key field [field ...] | HDEL alice python php | (integer) 2
+ 返回值的字符串长度 | HSTRLEN key field | HSTRLEN sam python | (integer) 2
  
  ## list
  > 
