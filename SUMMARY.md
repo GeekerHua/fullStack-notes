@@ -5,8 +5,8 @@
 * [Introduction](README.md)
 * [pdb调试](pdb.md)
 
+## 数据库
 
-## [DataBase数据库](DataBase/README.md)
 * [mysql安装与配置](DataBase/mysql.md)
 * [mysql基础](DataBase/mysql_command.md)
 * [mysql数据类型](DataBase/mysql-data-type.md)
@@ -16,7 +16,6 @@
 * [mongoDB基础](DataBase/mongodb.md)
 * [mongoDB高级命令](DataBase/mongodb_height_command.md)
 * [Redis基础](DataBase/redis.md)
-
 
 ## Test笔试题
 
