@@ -107,7 +107,7 @@ $ redis-cli
 返回list索引位置的元素 | LINDEX key index
 
 ## set
->
+> 
 - 无序集合
 - 元素为string类型
 - 元素具有唯一性，不重复
@@ -126,7 +126,7 @@ $ redis-cli
 判断元素是否在集合中 | SISMEMBER key member
 
 ## zset
->
+> 
 - 有序集合
 - 元素为string类型
 - 元素具有唯一性，不重复
