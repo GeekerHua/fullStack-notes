@@ -28,7 +28,8 @@
 
 * [shell](linux/shell.md)
   * [shell特殊字符](linux/shell/shell-character.md)
-  * [shell基础命令](linux/shell/shell.md)
+  * [shell基础命令](linux/shell/shell-variable.md)
+  * [shell条件控制](linux/shell/shell-conditions.md)
 
 ## 试题
 
