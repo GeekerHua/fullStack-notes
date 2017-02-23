@@ -2,6 +2,6 @@
     "plugins": [
         "splitter",
         "toggle-chapters",
-        "indexes",
+        "indexes"
     ]
 }
