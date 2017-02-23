@@ -28,7 +28,7 @@
 
 * [shell](linux/shell.md)
   * [shell特殊字符](linux/shell/shell-character.md)
-  * [shell变量和参数](linux/shell/shell.md)
+  * [shell基础命令](linux/shell/shell.md)
 
 ## 试题
 
