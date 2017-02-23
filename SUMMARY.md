@@ -24,6 +24,12 @@
   * [Redis基础](DataBase/redis-command.md)
   * [Redis高级应用](DataBase/redis-high-apply.md)
 
+## Linux
+
+* [shell](linux/shell.md)
+  * [shell特殊字符](linux/shell/shell-character.md)
+  * [shell变量和参数](linux/shell/shell.md)
+
 ## 试题
 
 * [每日练习](test/test.md)
