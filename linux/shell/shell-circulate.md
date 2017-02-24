@@ -59,6 +59,7 @@ exit 0
 # 测试与分支
 ## case(in)/esac
 > 在shell中的case结构与C/C++中的switch结构是相同的。它允许通过判断来选择代码块中多 条路径中的一条。它的作用和多个if/then/else语句的作用相同，是它们的简化结构，特别 适用于创建菜单。case块以esac（case的反向拼写）结尾。
+
 ```bash
 #!/bin/bash 
 # 测试字符串范围. 
@@ -82,6 +83,7 @@ exit 0
 ```
 ## select
 > select结构是建立菜单的另一种工具，这种结构是从ksh中引入的。
+
 ```bash
 #!/bin/bash 
 PS3='Choose your favorite vegetable: ' # 设置提示符字串. 
