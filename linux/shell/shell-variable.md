@@ -32,7 +32,8 @@ bash不区分变量类型
 
 ## 参数替换
 ### 处理和(或)扩展变量
-同长情况下${parameter}与$parameter相同,都是parameter的值。但在某些情况下最好使用前者，避免混淆。
+通常情况下${parameter}与$parameter相同,都是parameter的值。但在某些情况下最好使用前者，避免混淆。
+
 扩展命令 | 说明 
 ----- | ----
 ${parameter-default}|	如果变量 parameter 没被声明，那么就使用默认值。
@@ -60,7 +61,18 @@ $ echo $t
 -> 1234-defg
 ```
 
-### 变量扩展/子串删除
+### 变量扩展/子串替换
+命令 | 说明 
+---- | ----
+${var:pos} | 变量var从位置pos开始扩展，丢掉pos之前的字符
+${var:pos:len} | 变量var从位置pos开始，并扩展len个字符
+${var/Pattern/Replacement} |使用Replacement来替换变量var中第一个匹配Pattern的字符串。
+${var//Pattern/Replacement} | 全局替换。所有在变量var匹配Pattern的字符串，都会被替换为Replacement。
+${var/#Pattern/Replacement} | 如果变量var的前缀匹配Pattern，那么就使用Replacement来替换匹配到Pattern的字符串。 
+${var/%Pattern/Replacement} | 如果变量var的后缀匹配Pattern，那么就使用Replacement来替换匹配到Pattern的字符串。
 
+## 指定变量的类型
+使用declare或者typeset
 
-
+# 双圆括号结构
+与`let`命令相似，((...))结构允许算术扩展和赋值。 如，a=$(( 5 + 3 ))，将把变量“a”设为“5 + 3”，或者8。

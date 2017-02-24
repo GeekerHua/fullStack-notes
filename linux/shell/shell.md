@@ -8,4 +8,5 @@ todo-list
 - [ ] awk的语法
 - [ ] grep的完整用法
 - [ ] sed的完整用法
-- [ ] 
+- [ ] 指定变量的类型，使用declare或者typeset
+
