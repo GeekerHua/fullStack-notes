@@ -31,6 +31,7 @@
   * [shell变量](linux/shell/shell-variable.md)
   * [shell条件控制](linux/shell/shell-conditions.md)
   * [shell操作符](linux/shell/shell-operate.md)
+  * [shell循环](linux/shell/shell-circulate.md)
 
 ## 试题
 
