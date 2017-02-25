@@ -1,3 +1,16 @@
+# 条件控制
+## if else
+```bash
+if condition
+then 
+  command
+elif condition2
+  command2
+else
+  command3
+fi
+```
+
 ## for循环
 ```bash
 #!/bin/bash 
