@@ -5,6 +5,20 @@
 * [Introduction](README.md)
 * [pdb调试](pdb.md)
 
+## Web
+
+* [CSS](web/css/css.md)
+  * [css-selectors](web/css/css-selectors.md)
+
+## Linux
+
+* [shell](linux/shell/shell.md)
+  * [shell特殊字符](linux/shell/shell-character.md)
+  * [shell变量](linux/shell/shell-variable.md)
+  * [shell条件控制](linux/shell/shell-conditions.md)
+  * [shell操作符](linux/shell/shell-operate.md)
+  * [shell循环与控制](linux/shell/shell-circulate.md)
+
 ## 数据库
 
 * [mysql](DataBase/mysql.md)
@@ -23,15 +37,6 @@
   * [Redis安装及配置](DataBase/redis.md)
   * [Redis基础](DataBase/redis-command.md)
   * [Redis高级应用](DataBase/redis-high-apply.md)
-
-## Linux
-
-* [shell](linux/shell/shell.md)
-  * [shell特殊字符](linux/shell/shell-character.md)
-  * [shell变量](linux/shell/shell-variable.md)
-  * [shell条件控制](linux/shell/shell-conditions.md)
-  * [shell操作符](linux/shell/shell-operate.md)
-  * [shell循环与控制](linux/shell/shell-circulate.md)
 
 ## 试题
 
