@@ -10,6 +10,7 @@ $ npm install sass -g
 ### 编译
 > 通常编译使用命令`$ sass -t expanded --watch --scss style.scss:style.css 
 `即可。
+
 1. 单文件编译
 ```bash
 $ sass style.scss style.css
