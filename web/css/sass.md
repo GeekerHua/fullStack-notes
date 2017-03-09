@@ -8,12 +8,30 @@ $ npm install sass -g
 ```
 
 ### 编译
+> 通常编译使用命令`$ sass -t expanded --watch --scss style.scss:style.css 
+`即可。
 1. 单文件编译
 ```bash
-sass style.scss style.css
+$ sass style.scss style.css
 ```
 
-2.
+2. 单文件监听
+```bash
+$ sass --watch style.scss:style.css
+```
+
+3. 文件夹监听
+```bash
+$ sass --watch sassFileDirectory:cssFileDirectory
+```
+
+4. css文件转成sass/scss文件（在线转换工具css2sass）
+```bash
+$ sass-convert style.css style.sass   
+$ sass-convert style.css style.scss
+```
+
+
 
 ## 语法
 ### 导入
