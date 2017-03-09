@@ -9,6 +9,10 @@
 
 * [CSS](web/css/css.md)
   * [css-selectors](web/css/css-selectors.md)
+  * [sass](web/css/sass.md)
+* [HTML](/web/html/html.md)
+  * [pug](web/html/pug.md)
+* [JavaScript](/web/javascript/javascript.md)
 
 ## Linux
 
